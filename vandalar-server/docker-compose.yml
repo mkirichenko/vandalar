@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    image: openjdk:8
+    container_name: app
+    volumes:
+      - .:/home/app/
+    command: java -jar /home/app/target/vandalar-server-0.0.1-SNAPSHOT.jar
+    ports:
+      - 8880:8880
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.1-alpine
+    container_name: db_pg
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db_data:/home/db_data
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    restart: always
