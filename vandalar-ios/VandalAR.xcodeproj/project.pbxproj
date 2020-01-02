@@ -8,23 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD423A40A7900D6594C /* AppDelegate.swift */; };
-		E2138FD723A40A7900D6594C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD623A40A7900D6594C /* ContentView.swift */; };
+		E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD623A40A7900D6594C /* RegistrationView.swift */; };
 		E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD823A40A7900D6594C /* Experience.rcproject */; };
 		E2138FDB23A40A7A00D6594C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2138FDA23A40A7A00D6594C /* Assets.xcassets */; };
 		E2138FDE23A40A7A00D6594C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2138FDD23A40A7A00D6594C /* Preview Assets.xcassets */; };
 		E2138FE123A40A7B00D6594C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2138FDF23A40A7B00D6594C /* LaunchScreen.storyboard */; };
 		E2138FEA23A40F7800D6594C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E2138FE923A40F7800D6594C /* Moya */; };
+		E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */; };
+		E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */; };
+		E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */; };
+		E28BCBE223BE4A9600DDFFA8 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE123BE4A9600DDFFA8 /* UserDefaults+Ext.swift */; };
+		E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE423BE5A2300DDFFA8 /* VandalAPIService.swift */; };
+		E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE623BE5FAD00DDFFA8 /* RegistrationViewModel.swift */; };
+		E28BCBE923BE63A900DDFFA8 /* VandalAPIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE823BE63A900DDFFA8 /* VandalAPIServiceType.swift */; };
+		E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2138FD123A40A7900D6594C /* VandalAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandalAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2138FD423A40A7900D6594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2138FD623A40A7900D6594C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2138FD623A40A7900D6594C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E2138FD823A40A7900D6594C /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		E2138FDA23A40A7A00D6594C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2138FDD23A40A7A00D6594C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2138FE023A40A7B00D6594C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2138FE223A40A7B00D6594C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
+		E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPI.swift; sourceTree = "<group>"; };
+		E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
+		E28BCBE123BE4A9600DDFFA8 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		E28BCBE423BE5A2300DDFFA8 /* VandalAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPIService.swift; sourceTree = "<group>"; };
+		E28BCBE623BE5FAD00DDFFA8 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		E28BCBE823BE63A900DDFFA8 /* VandalAPIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPIServiceType.swift; sourceTree = "<group>"; };
+		E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPIServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +74,11 @@
 		E2138FD323A40A7900D6594C /* VandalAR */ = {
 			isa = PBXGroup;
 			children = (
+				E28BCBD623BE42EE00DDFFA8 /* Network */,
+				E28BCBDE23BE494900DDFFA8 /* Scenes */,
+				E28BCBE323BE59EC00DDFFA8 /* Services */,
+				E28BCBE023BE4A7B00DDFFA8 /* Utils */,
 				E2138FD423A40A7900D6594C /* AppDelegate.swift */,
-				E2138FD623A40A7900D6594C /* ContentView.swift */,
 				E2138FD823A40A7900D6594C /* Experience.rcproject */,
 				E2138FDA23A40A7A00D6594C /* Assets.xcassets */,
 				E2138FDF23A40A7B00D6594C /* LaunchScreen.storyboard */,
@@ -75,6 +94,59 @@
 				E2138FDD23A40A7A00D6594C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E28BCBD623BE42EE00DDFFA8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBD923BE44EA00DDFFA8 /* Registration */,
+				E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E28BCBD923BE44EA00DDFFA8 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */,
+				E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		E28BCBDE23BE494900DDFFA8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBDF23BE497800DDFFA8 /* Registration */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E28BCBDF23BE497800DDFFA8 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E2138FD623A40A7900D6594C /* RegistrationView.swift */,
+				E28BCBE623BE5FAD00DDFFA8 /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		E28BCBE023BE4A7B00DDFFA8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBE123BE4A9600DDFFA8 /* UserDefaults+Ext.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E28BCBE323BE59EC00DDFFA8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBE423BE5A2300DDFFA8 /* VandalAPIService.swift */,
+				E28BCBE823BE63A900DDFFA8 /* VandalAPIServiceType.swift */,
+				E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +226,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2138FD723A40A7900D6594C /* ContentView.swift in Sources */,
+				E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */,
+				E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */,
+				E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */,
+				E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */,
+				E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */,
 				E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */,
+				E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */,
 				E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */,
+				E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */,
+				E28BCBE923BE63A900DDFFA8 /* VandalAPIServiceType.swift in Sources */,
+				E28BCBE223BE4A9600DDFFA8 /* UserDefaults+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VandalAR/Preview Content\"";
+				DEVELOPMENT_TEAM = QDY49F48G2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VandalAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -314,6 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VandalAR/Preview Content\"";
+				DEVELOPMENT_TEAM = QDY49F48G2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VandalAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
