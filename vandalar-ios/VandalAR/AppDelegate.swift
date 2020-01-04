@@ -12,19 +12,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		
 		context = VandalAPIService(apiProvider: MoyaProvider())
-		let initialView: AnyView
+		let contentView: AppContentView
 		if let privateIDString = UserDefaults.standard.string(forKey: UserDefaults.privateIDKey),
 			let privateID = UUID(uuidString: privateIDString) {
 			
 			print("TODO: go on...")
-			initialView = AnyView(Text(privateIDString))
+			contentView = AppContentView(isRegistrationComplete: true, context: context)
 		} else {
-			let viewModel = RegistrationViewModel(context: context)
-			initialView = AnyView(RegistrationView(viewModel: viewModel))
+			contentView = AppContentView(isRegistrationComplete: false, context: context)
 		}
 		
 		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.rootViewController = UIHostingController(rootView: initialView)
+		window.rootViewController = UIHostingController(rootView: contentView)
 		self.window = window
 		window.makeKeyAndVisible()
 		return true

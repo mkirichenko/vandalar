@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 final class RegistrationViewModel: ObservableObject {
 	typealias Context = VandalAPIServiceType // & other contexts...
@@ -7,15 +8,16 @@ final class RegistrationViewModel: ObservableObject {
 	private let context: Context
 	private let registerSubject = PassthroughSubject<String, Never>()
 	
+	@Binding private var isRegistrationComplete: Bool
+	
 	@Published var isShowingAlert: Bool = false
 	@Published private(set) var alertMessage: String? = nil
-	@Published var shouldNavigateFurther: Bool = false
-	@Published private(set) var publicId: String? = nil
 	
 	private var disposeBag = Set<AnyCancellable>()
 	
-	init(context: Context) {
+	init(context: Context, isRegistrationComplete: Binding<Bool>) {
 		self.context = context
+		_isRegistrationComplete = isRegistrationComplete
 		configureBindings()
 	}
 	
@@ -38,9 +40,8 @@ final class RegistrationViewModel: ObservableObject {
 					.catch { _ in Empty() }
 					.eraseToAnyPublisher()
 			}
-			.sink { [unowned self] registrationResponse in
-				self.publicId = registrationResponse.publicId
-				self.shouldNavigateFurther = true
+			.sink { [unowned self] _ in
+				self.isRegistrationComplete = true
 			}
 			.store(in: &disposeBag)
 	}

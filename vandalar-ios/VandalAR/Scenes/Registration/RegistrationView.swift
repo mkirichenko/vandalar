@@ -13,13 +13,6 @@ struct RegistrationView : View {
     var body: some View {
 		NavigationView {
 			VStack {
-				NavigationLink(
-					destination: Text(verbatim: viewModel.publicId ?? ""),
-					isActive: $viewModel.shouldNavigateFurther
-				) {
-					EmptyView()
-				}
-				
 				Form {
 					Section(footer:
 						Text("This is how you will be known to other vandals.")
@@ -49,7 +42,7 @@ struct RegistrationView : View {
 #if DEBUG
 struct RegistrationView_Previews : PreviewProvider {
     static var previews: some View {
-		let viewModel = RegistrationViewModel(context: VandalAPIServiceMock())
+		let viewModel = RegistrationViewModel(context: VandalAPIServiceMock(), isRegistrationComplete: .constant(false))
 		return RegistrationView(viewModel: viewModel)
     }
 }

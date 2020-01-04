@@ -22,6 +22,7 @@
 		E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE623BE5FAD00DDFFA8 /* RegistrationViewModel.swift */; };
 		E28BCBE923BE63A900DDFFA8 /* VandalAPIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBE823BE63A900DDFFA8 /* VandalAPIServiceType.swift */; };
 		E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */; };
+		E28BCBF023C0DCEF00DDFFA8 /* AppContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBEF23C0DCEF00DDFFA8 /* AppContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E28BCBE623BE5FAD00DDFFA8 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E28BCBE823BE63A900DDFFA8 /* VandalAPIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPIServiceType.swift; sourceTree = "<group>"; };
 		E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPIServiceMock.swift; sourceTree = "<group>"; };
+		E28BCBEF23C0DCEF00DDFFA8 /* AppContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		E28BCBDE23BE494900DDFFA8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E28BCBEE23C0DC9A00DDFFA8 /* AppContent */,
 				E28BCBDF23BE497800DDFFA8 /* Registration */,
 			);
 			path = Scenes;
@@ -147,6 +150,14 @@
 				E28BCBEA23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		E28BCBEE23C0DC9A00DDFFA8 /* AppContent */ = {
+			isa = PBXGroup;
+			children = (
+				E28BCBEF23C0DCEF00DDFFA8 /* AppContentView.swift */,
+			);
+			path = AppContent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */,
 				E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */,
 				E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */,
+				E28BCBF023C0DCEF00DDFFA8 /* AppContentView.swift in Sources */,
 				E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */,
 				E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */,
 				E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */,
