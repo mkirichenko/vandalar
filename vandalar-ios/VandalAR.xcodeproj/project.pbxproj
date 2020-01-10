@@ -14,6 +14,10 @@
 		E2138FDE23A40A7A00D6594C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2138FDD23A40A7A00D6594C /* Preview Assets.xcassets */; };
 		E2138FE123A40A7B00D6594C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2138FDF23A40A7B00D6594C /* LaunchScreen.storyboard */; };
 		E2138FEA23A40F7800D6594C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E2138FE923A40F7800D6594C /* Moya */; };
+		E228452D23C8D72600077B38 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228452C23C8D72600077B38 /* Note.swift */; };
+		E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228452E23C8D87A00077B38 /* UUID+Ext.swift */; };
+		E228453223C8DC5E00077B38 /* AddNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453123C8DC5E00077B38 /* AddNoteRequest.swift */; };
+		E228453423C8DC9000077B38 /* AddNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453323C8DC9000077B38 /* AddNoteResponse.swift */; };
 		E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */; };
 		E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */; };
 		E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */; };
@@ -34,6 +38,10 @@
 		E2138FDD23A40A7A00D6594C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2138FE023A40A7B00D6594C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2138FE223A40A7B00D6594C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E228452C23C8D72600077B38 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		E228452E23C8D87A00077B38 /* UUID+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Ext.swift"; sourceTree = "<group>"; };
+		E228453123C8DC5E00077B38 /* AddNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRequest.swift; sourceTree = "<group>"; };
+		E228453323C8DC9000077B38 /* AddNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteResponse.swift; sourceTree = "<group>"; };
 		E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPI.swift; sourceTree = "<group>"; };
 		E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
@@ -98,9 +106,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E228452B23C8D71200077B38 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E228452C23C8D72600077B38 /* Note.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E228453023C8DC5100077B38 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				E228453123C8DC5E00077B38 /* AddNoteRequest.swift */,
+				E228453323C8DC9000077B38 /* AddNoteResponse.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
 		E28BCBD623BE42EE00DDFFA8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E228453023C8DC5100077B38 /* AddNote */,
+				E228452B23C8D71200077B38 /* Common */,
 				E28BCBD923BE44EA00DDFFA8 /* Registration */,
 				E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */,
 			);
@@ -138,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				E28BCBE123BE4A9600DDFFA8 /* UserDefaults+Ext.swift */,
+				E228452E23C8D87A00077B38 /* UUID+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -242,12 +270,16 @@
 				E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */,
 				E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */,
 				E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */,
+				E228453223C8DC5E00077B38 /* AddNoteRequest.swift in Sources */,
+				E228452D23C8D72600077B38 /* Note.swift in Sources */,
+				E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */,
 				E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */,
 				E28BCBF023C0DCEF00DDFFA8 /* AppContentView.swift in Sources */,
 				E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */,
 				E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */,
 				E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */,
 				E28BCBE923BE63A900DDFFA8 /* VandalAPIServiceType.swift in Sources */,
+				E228453423C8DC9000077B38 /* AddNoteResponse.swift in Sources */,
 				E28BCBE223BE4A9600DDFFA8 /* UserDefaults+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
