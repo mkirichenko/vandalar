@@ -1,3 +1,4 @@
+
 import SwiftUI
 
 struct AppContentView: View {
@@ -13,8 +14,8 @@ struct AppContentView: View {
 	var body: some View {
 		Group {
 			if isRegistrationComplete {
-				// TODO: Show the main AR view
-				Text("Main AR View")
+                ARKitView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.all)
 			} else {
 				RegistrationView(viewModel: RegistrationViewModel(context: context, isRegistrationComplete: $isRegistrationComplete))
 			}
