@@ -6,48 +6,47 @@ import com.vandalar.server.note.model.NoteCreationResponseDto;
 import com.vandalar.server.note.model.NoteDto;
 import com.vandalar.server.note.persistence.model.NoteEntity;
 import com.vandalar.server.note.persistence.repo.NoteRepository;
-import com.vandalar.server.user.persistense.UserEntity;
-import com.vandalar.server.user.persistense.UserRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-
+import com.vandalar.server.user.User;
+import com.vandalar.server.user.UserService;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class NoteService {
 	
 	private final NoteRepository noteRepository;
-	
-	private final UserRepository userRepository;
-	
+
 	private final NoteConverter noteConverter;
+
+	private final UserService userService;
 	
-	public NoteCreationResponseDto createNote(NoteCreationRequestDto request) {
-		
-		NoteEntity noteEntity = noteConverter.convertToNoteEntity(request);
+	public NoteCreationResponseDto createNote(String privateUserId, NoteCreationRequestDto request) {
+		String publicUserId = userService.getUser(privateUserId)
+			.getPublicId();
+
+		NoteEntity noteEntity = noteConverter.convertToNoteEntity(publicUserId, request);
 		
 		NoteEntity savedNote = noteRepository.save(noteEntity);
 		
 		return new NoteCreationResponseDto(savedNote.getId());
 	}
 	
-	public NoteDto getNoteById(long id) {
-		
-		NoteEntity noteEntity = noteRepository.findById(id);
+	public NoteDto getNoteById(String privateUserId, long id) {
+		NoteEntity noteEntity = getNoteEntity(id);
 		
 		return noteConverter.convertToNoteDto(noteEntity);
 	}
 	
 	public List<NoteDto> getNotesByUser(String privateUserId) {
-		
-		return Optional.ofNullable(userRepository.getOne(privateUserId))
-				.map(UserEntity::getPublicId)
+		return Optional.ofNullable(userService.getUser(privateUserId))
+				.map(User::getPublicId)
 				.map(noteRepository::findAllByUserId)
 				.map(Collection::stream)
 				.orElse(Stream.empty())
@@ -55,15 +54,29 @@ public class NoteService {
 				.collect(Collectors.toList());
 	}
 
-	public ResponseEntity<NoteCreationResponseDto> editNote(String privateUserId, long id, String content) {
-		return Optional.of(userRepository.getOne(privateUserId))
-				.map(UserEntity::getPublicId)
-				.map(userId -> noteRepository.findByIdAndUserId(id, userId))
-				.map(note -> {
-					note.setContent(content);
-					noteRepository.save(note);
-					return ResponseEntity.ok(new NoteCreationResponseDto(note.getId()));
-				})
-				.orElse(ResponseEntity.notFound().build());
+	@Transactional
+	public NoteCreationResponseDto updateNote(String privateUserId, long id, String content) {
+		NoteEntity noteEntity = getNoteEntity(id);
+
+		String publicUserId = userService.getUser(privateUserId)
+			.getPublicId();
+
+		if (!noteEntity.getUserId().equals(publicUserId)) {
+			throw new RuntimeException("note with id " + id + " does not belong to user with id " + privateUserId);
+		}
+
+		noteEntity.setContent(content);
+
+		return new NoteCreationResponseDto(noteEntity.getId());
+	}
+
+	private NoteEntity getNoteEntity(long id) {
+		NoteEntity noteEntity = noteRepository.findById(id);
+
+		if (noteEntity == null) {
+			throw new RuntimeException("note with id " + id + " is not found");
+		}
+
+		return noteEntity;
 	}
 }

@@ -2,18 +2,18 @@ package com.vandalar.server.user.web;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Size;
 
 public class RegistrationRequest {
 
     @Pattern(
-        regexp = "[a-f0-9]{8}(-[a-f0-9]{4}){4}[a-f0-9]{8}",
-        message = "${validatedValue} id not an UUID"
+        regexp = "[a-fA-F0-9]{8}(-[a-fA-F0-9]{4}){4}[a-fA-F0-9]{8}",
+        message = "${validatedValue} is not an UUID"
     )
     @NotEmpty
     private String privateId;
 
-    @Length(max = 255)
+    @Size(max = 1000)
     @NotEmpty
     private String name;
 

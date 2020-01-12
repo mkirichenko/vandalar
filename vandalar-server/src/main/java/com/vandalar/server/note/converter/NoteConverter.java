@@ -3,20 +3,13 @@ package com.vandalar.server.note.converter;
 import com.vandalar.server.note.model.NoteCreationRequestDto;
 import com.vandalar.server.note.model.NoteDto;
 import com.vandalar.server.note.persistence.model.NoteEntity;
-import com.vandalar.server.user.persistense.UserEntity;
-import com.vandalar.server.user.persistense.UserRepository;
-import lombok.AllArgsConstructor;
-import org.joda.time.LocalDateTime;
+import java.time.LocalDateTime;
+import java.util.Optional;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
-@AllArgsConstructor
 public class NoteConverter {
-	
-	private final UserRepository userRepository;
-	
+
 	public NoteDto convertToNoteDto(NoteEntity noteEntity) {
 		
 		if (noteEntity == null) {
@@ -41,14 +34,11 @@ public class NoteConverter {
 		return result;
 	}
 	
-	public NoteEntity convertToNoteEntity(NoteCreationRequestDto note) {
+	public NoteEntity convertToNoteEntity(String userId, NoteCreationRequestDto note) {
 		
 		NoteEntity result = new NoteEntity();
-		
-		Optional.ofNullable(userRepository.getOne(note.getPrivateUserId()))
-				.map(UserEntity::getPublicId)
-				.ifPresent(result::setUserId);
-		
+
+		result.setUserId(userId);
 		result.setContent(note.getContent());
 		result.setLat(note.getLat());
 		result.setLon(note.getLon());
