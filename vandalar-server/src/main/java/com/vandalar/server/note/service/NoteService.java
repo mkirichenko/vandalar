@@ -9,6 +9,7 @@ import com.vandalar.server.note.persistence.repo.NoteRepository;
 import com.vandalar.server.user.persistense.UserEntity;
 import com.vandalar.server.user.persistense.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -52,5 +53,17 @@ public class NoteService {
 				.orElse(Stream.empty())
 				.map(noteConverter::convertToNoteDto)
 				.collect(Collectors.toList());
+	}
+
+	public ResponseEntity<NoteCreationResponseDto> editNote(String privateUserId, long id, String content) {
+		return Optional.of(userRepository.getOne(privateUserId))
+				.map(UserEntity::getPublicId)
+				.map(userId -> noteRepository.findByIdAndUserId(id, userId))
+				.map(note -> {
+					note.setContent(content);
+					noteRepository.save(note);
+					return ResponseEntity.ok(new NoteCreationResponseDto(note.getId()));
+				})
+				.orElse(ResponseEntity.notFound().build());
 	}
 }

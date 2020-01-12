@@ -3,8 +3,10 @@ package com.vandalar.server.note.controller;
 import com.vandalar.server.note.model.NoteCreationRequestDto;
 import com.vandalar.server.note.model.NoteCreationResponseDto;
 import com.vandalar.server.note.model.NoteDto;
+import com.vandalar.server.note.model.NoteEditRequestDto;
 import com.vandalar.server.note.service.NoteService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,4 +36,12 @@ public class NoteController {
 	public List<NoteDto> getNotesByUser(@RequestHeader(USER_ID_HEADER_NAME) String privateUserId) {
 		return noteService.getNotesByUser(privateUserId);
 	}
+
+	@PutMapping("/{id}")
+	public ResponseEntity<NoteCreationResponseDto> updateNote(@RequestHeader(USER_ID_HEADER_NAME) String privateUserId,
+															 @PathVariable("id") long id,
+															 @RequestBody NoteEditRequestDto noteEditRequest) {
+		return noteService.editNote(privateUserId, id, noteEditRequest.getContent());
+	}
+
 }

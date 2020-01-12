@@ -8,8 +8,10 @@ import java.util.List;
 
 @Repository
 public interface NoteRepository extends CrudRepository<NoteEntity, Long> {
-	
+
 	NoteEntity findById(long id);
-	
+
+	NoteEntity findByIdAndUserId(long id, String userId);
+
 	List<NoteEntity> findAllByUserId(String userId);
 }
