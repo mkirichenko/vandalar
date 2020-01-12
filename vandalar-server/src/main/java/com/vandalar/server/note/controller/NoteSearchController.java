@@ -1,11 +1,14 @@
 package com.vandalar.server.note.controller;
 
 import com.vandalar.server.note.model.NoteWithAuthorDto;
-import com.vandalar.server.note.service.NoteService;
-import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.*;
-
+import com.vandalar.server.note.service.NoteSearchService;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
@@ -14,7 +17,7 @@ public class NoteSearchController {
 	
 	private static final String USER_ID_HEADER_NAME = "X_USER_ID";
 	
-	private final NoteService noteService;
+	private final NoteSearchService noteSearchService;
 	
 	@GetMapping
 	public List<NoteWithAuthorDto> searchNotes(@RequestHeader(USER_ID_HEADER_NAME) String privateUserId,
@@ -23,6 +26,6 @@ public class NoteSearchController {
 	                                           @RequestParam double height,
 	                                           @RequestParam double radius) {
 		
-		return noteService.searchNotesByRadius(lat, lon, height, radius);
+		return noteSearchService.searchNotesByRadius(privateUserId, lat, lon, height, radius);
 	}
 }
