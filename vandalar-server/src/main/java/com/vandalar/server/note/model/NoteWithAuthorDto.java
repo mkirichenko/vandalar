@@ -13,9 +13,9 @@ public class NoteWithAuthorDto {
 	
 	private String content;
 	
-	private String user_id;
+	private String userId;
 	
-	private String user_name;
+	private String userName;
 	
 	private double lat;
 	

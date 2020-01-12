@@ -4,23 +4,18 @@ import com.vandalar.server.note.converter.NoteConverter;
 import com.vandalar.server.note.model.NoteCreationRequestDto;
 import com.vandalar.server.note.model.NoteCreationResponseDto;
 import com.vandalar.server.note.model.NoteDto;
-import com.vandalar.server.note.model.NoteWithAuthorDto;
 import com.vandalar.server.note.persistence.model.NoteEntity;
 import com.vandalar.server.note.persistence.repo.NoteRepository;
 import com.vandalar.server.user.User;
 import com.vandalar.server.user.UserService;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javax.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
@@ -83,77 +78,5 @@ public class NoteService {
 		}
 
 		return noteEntity;
-	}
-	
-	public List<NoteWithAuthorDto> searchNotesByRadius(double lat, double lon, double height, double radius) {
-		
-		List<NoteWithAuthorDto> result = new ArrayList<>();
-		
-		for(NoteEntity note : noteRepository.findAll()) {
-			
-			Sphere sphere = new Sphere(lat, lon, height, radius);
-			
-			if (!isNoteInSphere(note, sphere)) {
-				continue;
-			}
-			
-			NoteWithAuthorDto noteWithAuthorDto = createNoteWithAuthorDtoByNote(note);
-			
-			result.add(noteWithAuthorDto);
-		}
-		
-		return result;
-	}
-	
-	private boolean isNoteInSphere(NoteEntity note, Sphere sphere) {
-		
-		if (note == null || sphere == null) {
-			return false;
-		}
-		
-		double squaredDistanceToSphereCenter = Math.pow(note.getLat() - sphere.getLat(), 2)
-				+ Math.pow(note.getLon() - sphere.getLon(), 2)
-				+ Math.pow(note.getHeight() - sphere.getHeight(), 2);
-		
-		double distanceToSphereCenter = Math.sqrt(squaredDistanceToSphereCenter);
-		
-		return distanceToSphereCenter <= sphere.getRadius();
-	}
-	
-	private NoteWithAuthorDto createNoteWithAuthorDtoByNote(NoteEntity note) {
-		
-		String publicUserId = note.getUserId();
-		
-		NoteWithAuthorDto result = new NoteWithAuthorDto();
-		
-		result.setId(note.getId());
-		result.setContent(note.getContent());
-		result.setUser_id(publicUserId);
-		result.setLat(note.getLat());
-		result.setLon(note.getLon());
-		result.setHeight(note.getHeight());
-		
-		Optional.of(note)
-				.map(NoteEntity::getCreationDateTime)
-				.map(LocalDateTime::toString)
-				.ifPresent(result::setCreated);
-		
-		if (publicUserId != null) {
-			Optional.ofNullable(userService.getByPublicId(publicUserId))
-					.map(User::getName)
-					.ifPresent(result::setUser_name);
-		}
-		
-		return result;
-	}
-	
-	@Data
-	@AllArgsConstructor
-	private static class Sphere {
-		
-		double lat;
-		double lon;
-		double height;
-		double radius;
 	}
 }
