@@ -15,15 +15,27 @@ public class UserService {
 
     public User getUser(String privateId) {
         UserEntity userEntity = repository.getOne(privateId);
-
-        if (userEntity == null) {
-            throw new RuntimeException("user with id " + privateId + " is not found");
-        }
-
-        return toUser(userEntity);
+	
+	    checkErrors(privateId, userEntity);
+	
+	    return toUser(userEntity);
     }
-
-    private User toUser(UserEntity userEntity) {
+	
+	public User getByPublicId(String publicId) {
+		UserEntity userEntity = repository.findByPublicId(publicId);
+		
+		checkErrors(publicId, userEntity);
+		
+		return toUser(userEntity);
+	}
+	
+	private void checkErrors(String publicId, UserEntity userEntity) {
+		if (userEntity == null) {
+			throw new RuntimeException("user with id " + publicId + " is not found");
+		}
+	}
+	
+	private User toUser(UserEntity userEntity) {
         return new User(userEntity.getPrivateId(), userEntity.getPublicId(), userEntity.getName());
     }
 }
