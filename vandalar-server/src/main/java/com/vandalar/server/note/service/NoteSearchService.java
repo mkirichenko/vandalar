@@ -53,19 +53,40 @@ public class NoteSearchService {
         return result;
     }
 
-
     private boolean isNoteInSphere(NoteEntity note, Sphere sphere) {
         if (note == null || sphere == null) {
             return false;
         }
 
-        double squaredDistanceToSphereCenter = Math.pow(note.getLat() - sphere.getLat(), 2)
-            + Math.pow(note.getLon() - sphere.getLon(), 2)
-            + Math.pow(note.getHeight() - sphere.getHeight(), 2);
-
-        double distanceToSphereCenter = Math.sqrt(squaredDistanceToSphereCenter);
+        double distanceToSphereCenter = distanceBetween(note.getLat(), sphere.getLat(),
+                                                        note.getLon(), sphere.getLon(),
+                                                        note.getHeight(), sphere.getHeight());
 
         return distanceToSphereCenter <= sphere.getRadius();
+    }
+
+    private double distanceBetween(double lat1, double lat2,
+                                   double lon1, double lon2,
+                                   double h1, double h2) {
+
+        int R = 6371009;
+
+        double phi1 = Math.toRadians(lat1);
+        double phi2 = Math.toRadians(lat2);
+
+        double dPhi = Math.toRadians(lat2 - lat1);
+        double dLambda = Math.toRadians(lon2 - lon1);
+
+        double a = Math.pow(Math.sin(dPhi / 2), 2)
+            + Math.cos(phi1) * Math.cos(phi2) * Math.pow(Math.sin(dLambda / 2), 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        double d = R * c;
+
+        double h = h1 - h2;
+
+        return Math.sqrt(Math.pow(d, 2) + Math.pow(h, 2));
     }
 
     @Data
