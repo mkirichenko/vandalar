@@ -1,13 +1,5 @@
-//
-//  ARKitView.swift
-//  VandalAR
-//
-//  Created by Egor Topolnyak on 12.01.2020.
-//  Copyright © 2020 NSU. All rights reserved.
-//
-
 import SwiftUI
-import ARCL
+import ARKit_CoreLocation
 import CoreLocation
 import ARKit
 

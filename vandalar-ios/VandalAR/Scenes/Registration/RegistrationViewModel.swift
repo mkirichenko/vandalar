@@ -23,7 +23,6 @@ final class RegistrationViewModel: ObservableObject {
 	
 	private func configureBindings() {
 		registerSubject
-			.removeDuplicates()
 			.throttle(for: 3, scheduler: RunLoop.main, latest: false)
 			.map { ($0, UUID()) }
 			.handleEvents(receiveOutput: { name, privateId in

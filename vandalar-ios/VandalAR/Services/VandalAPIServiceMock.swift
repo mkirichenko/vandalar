@@ -11,7 +11,20 @@ final class VandalAPIServiceMock: VandalAPIServiceType {
 	}
 	
 	func fetchNotes(privateId: UUID) -> AnyPublisher<[Note], Error> {
-		Just([]).mapError { _ in StubError() }.eraseToAnyPublisher()
+		var notes = [Note]()
+		for i in 0..<10 {
+			let note = Note(
+				id: i,
+				content: "Place \(i)",
+				lat: .random(in: 0..<90),
+				lon: .random(in: 0..<90),
+				height: 0,
+				created: Date(timeIntervalSinceNow: TimeInterval(-i * 60))
+			)
+			notes.append(note)
+		}
+		
+		return Just(notes).mapError { _ in StubError() }.eraseToAnyPublisher()
 	}
 	
 	func fetchNote(privateId: UUID, id: Int) -> AnyPublisher<Note, Error> {

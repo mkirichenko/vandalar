@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79DCAC017878AC00C4E4ADB1 /* Pods_VandalAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62B8E3C78F2A206FB2DCE69 /* Pods_VandalAR.framework */; };
 		E06B4E0823CB698200288EEF /* ARKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06B4E0723CB698200288EEF /* ARKitView.swift */; };
 		E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD423A40A7900D6594C /* AppDelegate.swift */; };
 		E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2138FD623A40A7900D6594C /* RegistrationView.swift */; };
@@ -20,6 +19,10 @@
 		E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228452E23C8D87A00077B38 /* UUID+Ext.swift */; };
 		E228453223C8DC5E00077B38 /* AddNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453123C8DC5E00077B38 /* AddNoteRequest.swift */; };
 		E228453423C8DC9000077B38 /* AddNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453323C8DC9000077B38 /* AddNoteResponse.swift */; };
+		E268A1BE23CB5E9700FDB3BB /* MyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */; };
+		E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */; };
+		E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */; };
+		E268E76E23CCD79400FDB3BB /* ARCL in Frameworks */ = {isa = PBXBuildFile; productRef = E268E76D23CCD79400FDB3BB /* ARCL */; };
 		E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */; };
 		E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */; };
 		E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */; };
@@ -32,9 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22ADFF0C93A7CA31E13756B7 /* Pods-VandalAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VandalAR.release.xcconfig"; path = "Target Support Files/Pods-VandalAR/Pods-VandalAR.release.xcconfig"; sourceTree = "<group>"; };
-		56B615EBEA03746CBDD61DBC /* Pods-VandalAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VandalAR.debug.xcconfig"; path = "Target Support Files/Pods-VandalAR/Pods-VandalAR.debug.xcconfig"; sourceTree = "<group>"; };
-		C62B8E3C78F2A206FB2DCE69 /* Pods_VandalAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VandalAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06B4E0723CB698200288EEF /* ARKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitView.swift; sourceTree = "<group>"; };
 		E2138FD123A40A7900D6594C /* VandalAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandalAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2138FD423A40A7900D6594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +48,9 @@
 		E228452E23C8D87A00077B38 /* UUID+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Ext.swift"; sourceTree = "<group>"; };
 		E228453123C8DC5E00077B38 /* AddNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRequest.swift; sourceTree = "<group>"; };
 		E228453323C8DC9000077B38 /* AddNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteResponse.swift; sourceTree = "<group>"; };
+		E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesView.swift; sourceTree = "<group>"; };
+		E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesItemView.swift; sourceTree = "<group>"; };
+		E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesViewModel.swift; sourceTree = "<group>"; };
 		E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPI.swift; sourceTree = "<group>"; };
 		E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
@@ -64,38 +67,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E268E76E23CCD79400FDB3BB /* ARCL in Frameworks */,
 				E2138FEA23A40F7800D6594C /* Moya in Frameworks */,
-				79DCAC017878AC00C4E4ADB1 /* Pods_VandalAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		90BABE8D5791EC4407805053 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C62B8E3C78F2A206FB2DCE69 /* Pods_VandalAR.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B45E426ABC7C71B51A3253F4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				56B615EBEA03746CBDD61DBC /* Pods-VandalAR.debug.xcconfig */,
-				22ADFF0C93A7CA31E13756B7 /* Pods-VandalAR.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		E2138FC823A40A7900D6594C = {
 			isa = PBXGroup;
 			children = (
 				E2138FD323A40A7900D6594C /* VandalAR */,
 				E2138FD223A40A7900D6594C /* Products */,
-				B45E426ABC7C71B51A3253F4 /* Pods */,
-				90BABE8D5791EC4407805053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +133,16 @@
 			path = AddNote;
 			sourceTree = "<group>";
 		};
+		E268A1BC23CB5E1900FDB3BB /* MyNotes */ = {
+			isa = PBXGroup;
+			children = (
+				E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */,
+				E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */,
+				E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */,
+			);
+			path = MyNotes;
+			sourceTree = "<group>";
+		};
 		E28BCBD623BE42EE00DDFFA8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E28BCBEE23C0DC9A00DDFFA8 /* AppContent */,
+				E268A1BC23CB5E1900FDB3BB /* MyNotes */,
 				E28BCBDF23BE497800DDFFA8 /* Registration */,
 			);
 			path = Scenes;
@@ -222,11 +217,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2138FE523A40A7B00D6594C /* Build configuration list for PBXNativeTarget "VandalAR" */;
 			buildPhases = (
-				75E88D1299E7CB54C3D0A73E /* [CP] Check Pods Manifest.lock */,
 				E2138FCD23A40A7900D6594C /* Sources */,
 				E2138FCE23A40A7900D6594C /* Frameworks */,
 				E2138FCF23A40A7900D6594C /* Resources */,
-				EFB165E8122BA5E59E10508C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +228,7 @@
 			name = VandalAR;
 			packageProductDependencies = (
 				E2138FE923A40F7800D6594C /* Moya */,
+				E268E76D23CCD79400FDB3BB /* ARCL */,
 			);
 			productName = VandalAR;
 			productReference = E2138FD123A40A7900D6594C /* VandalAR.app */;
@@ -266,6 +260,7 @@
 			mainGroup = E2138FC823A40A7900D6594C;
 			packageReferences = (
 				E2138FE823A40F7800D6594C /* XCRemoteSwiftPackageReference "Moya" */,
+				E268E76C23CCD79400FDB3BB /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */,
 			);
 			productRefGroup = E2138FD223A40A7900D6594C /* Products */;
 			projectDirPath = "";
@@ -289,56 +284,16 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		75E88D1299E7CB54C3D0A73E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VandalAR-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EFB165E8122BA5E59E10508C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VandalAR/Pods-VandalAR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VandalAR/Pods-VandalAR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VandalAR/Pods-VandalAR-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E2138FCD23A40A7900D6594C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */,
+				E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */,
 				E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */,
 				E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */,
+				E268A1BE23CB5E9700FDB3BB /* MyNotesView.swift in Sources */,
 				E2138FD723A40A7900D6594C /* RegistrationView.swift in Sources */,
 				E06B4E0823CB698200288EEF /* ARKitView.swift in Sources */,
 				E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */,
@@ -347,6 +302,7 @@
 				E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */,
 				E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */,
 				E28BCBF023C0DCEF00DDFFA8 /* AppContentView.swift in Sources */,
+				E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */,
 				E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */,
 				E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */,
 				E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */,
@@ -486,20 +442,36 @@
 		};
 		E2138FE623A40A7B00D6594C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56B615EBEA03746CBDD61DBC /* Pods-VandalAR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VandalAR/Preview Content\"";
-				DEVELOPMENT_TEAM = 9TET2ND9AY;
+				DEVELOPMENT_TEAM = QDY49F48G2;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VandalAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.nsu.fit.VandalAR.evilcap;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"SceneKit\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"ARKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.nsu.fit.VandalAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -508,20 +480,36 @@
 		};
 		E2138FE723A40A7B00D6594C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22ADFF0C93A7CA31E13756B7 /* Pods-VandalAR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VandalAR/Preview Content\"";
-				DEVELOPMENT_TEAM = 9TET2ND9AY;
+				DEVELOPMENT_TEAM = QDY49F48G2;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = VandalAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.nsu.fit.VandalAR.evilcap;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"SceneKit\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"ARKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.nsu.fit.VandalAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -560,6 +548,14 @@
 				version = "14.0.0-beta.3";
 			};
 		};
+		E268E76C23CCD79400FDB3BB /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ProjectDent/ARKit-CoreLocation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -567,6 +563,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E2138FE823A40F7800D6594C /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		E268E76D23CCD79400FDB3BB /* ARCL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E268E76C23CCD79400FDB3BB /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */;
+			productName = ARCL;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,14 +12,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		
 		context = VandalAPIService(apiProvider: MoyaProvider())
+//		context = VandalAPIServiceMock()
 		let contentView: AppContentView
 		if let privateIDString = UserDefaults.standard.string(forKey: UserDefaults.privateIDKey),
 			let privateID = UUID(uuidString: privateIDString) {
 			
-			print("TODO: go on...")
-			contentView = AppContentView(isRegistrationComplete: true, context: context)
+			contentView = AppContentView(isRegistrationComplete: true, context: context, privateId: privateID)
 		} else {
-			contentView = AppContentView(isRegistrationComplete: false, context: context)
+			contentView = AppContentView(isRegistrationComplete: false, context: context, privateId: nil)
 		}
 		
 		let window = UIWindow(frame: UIScreen.main.bounds)
