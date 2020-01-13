@@ -23,6 +23,7 @@
 		E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */; };
 		E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */; };
 		E268E76E23CCD79400FDB3BB /* ARCL in Frameworks */ = {isa = PBXBuildFile; productRef = E268E76D23CCD79400FDB3BB /* ARCL */; };
+		E268E77123CCE8B400FDB3BB /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268E77023CCE8B400FDB3BB /* NoteDetail.swift */; };
 		E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */; };
 		E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */; };
 		E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */; };
@@ -51,6 +52,7 @@
 		E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesView.swift; sourceTree = "<group>"; };
 		E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesItemView.swift; sourceTree = "<group>"; };
 		E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesViewModel.swift; sourceTree = "<group>"; };
+		E268E77023CCE8B400FDB3BB /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
 		E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPI.swift; sourceTree = "<group>"; };
 		E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 			path = MyNotes;
 			sourceTree = "<group>";
 		};
+		E268E76F23CCE89C00FDB3BB /* NoteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E268E77023CCE8B400FDB3BB /* NoteDetail.swift */,
+			);
+			path = NoteDetail;
+			sourceTree = "<group>";
+		};
 		E28BCBD623BE42EE00DDFFA8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 			children = (
 				E28BCBEE23C0DC9A00DDFFA8 /* AppContent */,
 				E268A1BC23CB5E1900FDB3BB /* MyNotes */,
+				E268E76F23CCE89C00FDB3BB /* NoteDetail */,
 				E28BCBDF23BE497800DDFFA8 /* Registration */,
 			);
 			path = Scenes;
@@ -305,6 +316,7 @@
 				E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */,
 				E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */,
 				E2138FD923A40A7900D6594C /* Experience.rcproject in Sources */,
+				E268E77123CCE8B400FDB3BB /* NoteDetail.swift in Sources */,
 				E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */,
 				E28BCBE923BE63A900DDFFA8 /* VandalAPIServiceType.swift in Sources */,
 				E228453423C8DC9000077B38 /* AddNoteResponse.swift in Sources */,

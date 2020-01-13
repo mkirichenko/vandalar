@@ -13,7 +13,9 @@ struct MyNotesView: View {
 				Text("No notes yet")
 			} else {
 				List(viewModel.notes, id: \.id) { note in
-					MyNotesItemView(note: note)
+					NavigationLink(destination: NoteDetail(note: note)) {
+						MyNotesItemView(note: note)
+					}
 				}
 			}
 		}
