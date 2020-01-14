@@ -6,6 +6,7 @@ enum VandalAPI {
 	case fetchNotes(privateID: String)
 	case fetchNote(privateID: String, id: Int)
 	case addNote(privateID: String, AddNoteRequest)
+	case searchNotes(privateID: String, lat: Double, lon: Double, height: Double, radius: Double)
 }
 
 
@@ -27,6 +28,8 @@ extension VandalAPI: TargetType {
 			return "/note"
 		case .fetchNote(_, let id):
 			return "/note/\(id)"
+		case .searchNotes:
+			return "/note-search"
 		}
 	}
 	
@@ -34,7 +37,7 @@ extension VandalAPI: TargetType {
 		switch self {
 		case .register, .addNote:
 			return .post
-		case .fetchNotes, .fetchNote:
+			case .fetchNotes, .fetchNote, .searchNotes:
 			return .get
 		}
 	}
@@ -47,6 +50,9 @@ extension VandalAPI: TargetType {
 			return .requestJSONEncodable(request)
 		case .fetchNotes, .fetchNote:
 			return .requestPlain
+		case let .searchNotes(_, lat, lon, height, radius):
+			return .requestParameters(parameters: ["lat": lat, "lon": lon, "height": height, "radius": radius],
+									  encoding: URLEncoding.queryString)
 		}
 	}
 	
@@ -64,7 +70,8 @@ extension VandalAPI: TargetType {
 		switch self {
 			case .fetchNotes(let privateID),
 				 .fetchNote(let privateID, _),
-				 .addNote(let privateID, _):
+				 .addNote(let privateID, _),
+				 .searchNotes(let privateID, _, _, _, _):
 			return ["X_USER_ID" : privateID]
 		default:
 			return nil

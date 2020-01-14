@@ -49,6 +49,13 @@ final class VandalAPIService: VandalAPIServiceType {
 		let addNoteRequest = AddNoteRequest(content: content, lat: lat, lon: lon, height: height)
 		return request(target: .addNote(privateID: privateIdString, addNoteRequest), responseType: AddNoteResponse.self)
 	}
+	
+	func searchNotes(privateId: UUID, lat: Double, lon: Double, height: Double, radius: Double) -> AnyPublisher<[NoteWithAuthor], Error> {
+		request(target: .searchNotes(privateID: privateId.uuidString, lat: lat, lon: lon, height: height, radius: radius),
+				responseType: [NoteWithAuthor].self,
+				jsonDecoder: iso8601JSONDecoder
+		)
+	}
 }
 
 private extension VandalAPIService {

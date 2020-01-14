@@ -36,4 +36,23 @@ final class VandalAPIServiceMock: VandalAPIServiceType {
 	func addNote(privateId: UUID, content: String, lat: Double, lon: Double, height: Double) -> AnyPublisher<AddNoteResponse, Error> {
 		Just(AddNoteResponse(id: 0)).mapError { _ in StubError() }.eraseToAnyPublisher()
 	}
+	
+	func searchNotes(privateId: UUID, lat: Double, lon: Double, height: Double, radius: Double) -> AnyPublisher<[NoteWithAuthor], Error> {
+		var notes = [NoteWithAuthor]()
+		for i in 0..<10 {
+			let note = NoteWithAuthor(
+				id: i,
+				content: "Place \(i)",
+				userId: "1",
+				userName: "John\(i)",
+				lat: .random(in: 0..<90),
+				lon: .random(in: 0..<90),
+				height: 0,
+				created: Date(timeIntervalSinceNow: TimeInterval(-i * 60))
+			)
+			notes.append(note)
+		}
+		
+		return Just(notes).mapError { _ in StubError() }.eraseToAnyPublisher()
+	}
 }
