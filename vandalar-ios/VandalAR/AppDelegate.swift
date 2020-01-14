@@ -11,8 +11,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
 		
-//		context = VandalAPIService(apiProvider: MoyaProvider())
-		context = VandalAPIServiceMock()
+		context = VandalAPIService(apiProvider: MoyaProvider())
+//		context = VandalAPIServiceMock()
 		let contentView: AppContentView
 		if let privateIDString = UserDefaults.standard.string(forKey: UserDefaults.privateIDKey),
 			let privateID = UUID(uuidString: privateIDString) {

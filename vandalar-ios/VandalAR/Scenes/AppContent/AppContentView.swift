@@ -4,14 +4,13 @@ import SwiftUI
 struct AppContentView: View {
 	typealias Context = VandalAPIServiceType
 	@State private var isRegistrationComplete: Bool
-	@State private var shouldNavigateToMyNotes: Bool = false
+	@State private var shouldNavigateToMyNotes = false
+	@State private var shouldNavigateToAddNote = false
 	private let context: Context
-	private let privateId: UUID?
 	
 	init(isRegistrationComplete: Bool, context: Context, privateId: UUID?) {
 		_isRegistrationComplete = State(initialValue: isRegistrationComplete)
 		self.context = context
-		self.privateId = privateId
 	}
 	
 	var body: some View {
@@ -23,8 +22,15 @@ struct AppContentView: View {
 							.edgesIgnoringSafeArea(.all)
 						HStack {
 							NavigationLink(
-								destination: MyNotesView(viewModel: MyNotesViewModel(context: context, privateId: privateId!)),
+								destination: MyNotesView(viewModel: MyNotesViewModel(context: context)),
 								isActive: self.$shouldNavigateToMyNotes
+							) {
+								EmptyView()
+							}.hidden()
+							
+							NavigationLink(
+								destination: AddNoteView(viewModel: AddNoteViewModel(context: context, showSelf: self.$shouldNavigateToAddNote)),
+								isActive: self.$shouldNavigateToAddNote
 							) {
 								EmptyView()
 							}.hidden()
@@ -33,7 +39,7 @@ struct AppContentView: View {
 								Image(systemName: "list.bullet")
 							}
 							Spacer()
-							Button(action: {}) {
+							Button(action: { self.shouldNavigateToAddNote = true }) {
 								Image(systemName: "plus")
 							}
 						}.padding()

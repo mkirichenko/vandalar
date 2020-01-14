@@ -34,7 +34,7 @@ struct MyNotesView: View {
 #if DEBUG
 struct MyNotesView_Previews: PreviewProvider {
     static var previews: some View {
-		let viewModel = MyNotesViewModel(context: VandalAPIServiceMock(), privateId: UUID())
+		let viewModel = MyNotesViewModel(context: VandalAPIServiceMock())
 		return MyNotesView(viewModel: viewModel)
     }
 }

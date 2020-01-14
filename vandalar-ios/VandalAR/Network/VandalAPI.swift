@@ -15,7 +15,7 @@ extension VandalAPI: TargetType {
 		#if targetEnvironment(simulator)
 		return URL(string: "http://127.0.0.1:8880/api/v1")!
 		#else
-		return URL(string: "http://172.20.10.3:8880/api/v1")!
+		return URL(string: "http://172.20.10.2:8880/api/v1")!
 		#endif
 	}
 	

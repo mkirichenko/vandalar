@@ -24,6 +24,8 @@
 		E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */; };
 		E268E76E23CCD79400FDB3BB /* ARCL in Frameworks */ = {isa = PBXBuildFile; productRef = E268E76D23CCD79400FDB3BB /* ARCL */; };
 		E268E77123CCE8B400FDB3BB /* NoteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268E77023CCE8B400FDB3BB /* NoteDetail.swift */; };
+		E268FA5E23CE4CD900FDB3BB /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268FA5D23CE4CD900FDB3BB /* AddNoteView.swift */; };
+		E268FA6023CE4ED000FDB3BB /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268FA5F23CE4ED000FDB3BB /* AddNoteViewModel.swift */; };
 		E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */; };
 		E28BCBDB23BE455400DDFFA8 /* VandalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */; };
 		E28BCBDD23BE475B00DDFFA8 /* RegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */; };
@@ -53,6 +55,8 @@
 		E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesItemView.swift; sourceTree = "<group>"; };
 		E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesViewModel.swift; sourceTree = "<group>"; };
 		E268E77023CCE8B400FDB3BB /* NoteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetail.swift; sourceTree = "<group>"; };
+		E268FA5D23CE4CD900FDB3BB /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		E268FA5F23CE4ED000FDB3BB /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		E28BCBD723BE43FC00DDFFA8 /* RegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRequest.swift; sourceTree = "<group>"; };
 		E28BCBDA23BE455400DDFFA8 /* VandalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VandalAPI.swift; sourceTree = "<group>"; };
 		E28BCBDC23BE475B00DDFFA8 /* RegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationResponse.swift; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 			path = NoteDetail;
 			sourceTree = "<group>";
 		};
+		E268FA5C23CE4CCA00FDB3BB /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				E268FA5D23CE4CD900FDB3BB /* AddNoteView.swift */,
+				E268FA5F23CE4ED000FDB3BB /* AddNoteViewModel.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
 		E28BCBD623BE42EE00DDFFA8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 		E28BCBDE23BE494900DDFFA8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E268FA5C23CE4CCA00FDB3BB /* AddNote */,
 				E28BCBEE23C0DC9A00DDFFA8 /* AppContent */,
 				E268A1BC23CB5E1900FDB3BB /* MyNotes */,
 				E268E76F23CCE89C00FDB3BB /* NoteDetail */,
@@ -302,6 +316,7 @@
 			files = (
 				E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */,
 				E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */,
+				E268FA6023CE4ED000FDB3BB /* AddNoteViewModel.swift in Sources */,
 				E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */,
 				E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */,
 				E268A1BE23CB5E9700FDB3BB /* MyNotesView.swift in Sources */,
@@ -310,6 +325,7 @@
 				E28BCBE523BE5A2300DDFFA8 /* VandalAPIService.swift in Sources */,
 				E228453223C8DC5E00077B38 /* AddNoteRequest.swift in Sources */,
 				E228452D23C8D72600077B38 /* Note.swift in Sources */,
+				E268FA5E23CE4CD900FDB3BB /* AddNoteView.swift in Sources */,
 				E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */,
 				E2138FD523A40A7900D6594C /* AppDelegate.swift in Sources */,
 				E28BCBF023C0DCEF00DDFFA8 /* AppContentView.swift in Sources */,

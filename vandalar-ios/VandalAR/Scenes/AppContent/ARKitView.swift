@@ -12,7 +12,7 @@ struct ARKitView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: SceneLocationView, context: Context) {
-        let note = Note(id: 0, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", lat: 54.83884, lon: 83.10913, height: 182, created: Date())
+        let note = Note(id: 0, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", lat: 54.838781, lon: 83.105312, height: 200, created: Date())
        
         addNoteToARScene(note: note)
     }
@@ -38,7 +38,7 @@ struct ARKitView: UIViewRepresentable {
         view.backgroundColor = .white
 
         let annotationNode = LocationAnnotationNode(location: location, view: view)
-        annotationNode.scaleRelativeToDistance = true
+        annotationNode.scaleRelativeToDistance = false
         
         sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
     }
