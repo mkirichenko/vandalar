@@ -5,7 +5,7 @@ import ARKit
 
 struct ARKitView: UIViewRepresentable {
     private let locationManager = CLLocationManager()
-	@ObservedObject private var viewModel: ARKitViewModel
+	private var viewModel: ARKitViewModel
 	
 	init(viewModel: ARKitViewModel) {
 		self.viewModel = viewModel

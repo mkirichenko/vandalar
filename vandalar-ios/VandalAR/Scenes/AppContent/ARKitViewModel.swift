@@ -2,7 +2,7 @@ import Combine
 import SwiftUI
 import CoreLocation
 
-final class ARKitViewModel: ObservableObject {
+final class ARKitViewModel {
 	typealias Context = VandalAPIServiceType
 	
 	private let context: Context
@@ -10,13 +10,14 @@ final class ARKitViewModel: ObservableObject {
 	
 	private let fetchSubject: PassthroughSubject<Void, Never>
 	
-	@Published var notes: [NoteWithAuthor] = []
+	@Binding var notes: [NoteWithAuthor]
 	
 	private var disposeBag = Set<AnyCancellable>()
 	
-	init(context: Context, fetchSubject: PassthroughSubject<Void, Never>) {
+	init(context: Context, fetchSubject: PassthroughSubject<Void, Never>, notes: Binding<[NoteWithAuthor]>) {
 		self.context = context
 		self.fetchSubject = fetchSubject
+		_notes = notes
 		configureBindings()
 	}
 	
@@ -34,8 +35,8 @@ final class ARKitViewModel: ObservableObject {
 				.catch { _ in Empty() }
 				.eraseToAnyPublisher()
 		}
-		.sink { [unowned self] notes in
-			self.notes = notes
+		.sink { [weak self] notes in
+			self?.notes = notes
 		}
 		.store(in: &disposeBag)
 	}

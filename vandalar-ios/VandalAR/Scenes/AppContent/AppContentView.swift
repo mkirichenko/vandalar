@@ -7,6 +7,7 @@ struct AppContentView: View {
 	@State private var isRegistrationComplete: Bool
 	@State private var shouldNavigateToMyNotes = false
 	@State private var shouldNavigateToAddNote = false
+	@State private var notes: [NoteWithAuthor] = []
 	private let context: Context
 	private let fetchSubject = PassthroughSubject<Void, Never>()
 	
@@ -20,7 +21,7 @@ struct AppContentView: View {
 			if isRegistrationComplete {
 				NavigationView {
 					VStack {
-                        ARKitView(viewModel: ARKitViewModel(context: context, fetchSubject: fetchSubject))
+                        ARKitView(viewModel: ARKitViewModel(context: context, fetchSubject: fetchSubject, notes: $notes))
                             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
 							.edgesIgnoringSafeArea(.all)
 							.onAppear {
