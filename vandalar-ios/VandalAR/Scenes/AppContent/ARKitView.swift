@@ -46,20 +46,20 @@ struct ARKitView: UIViewRepresentable {
         let coordinate = CLLocationCoordinate2D(latitude: note.lat, longitude: note.lon)
         let location = CLLocation(coordinate: coordinate, altitude: note.height)
         
-        let view = UIView()
         
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: CGFloat.greatestFiniteMagnitude))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.text = note.content
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .black
-
-        label.sizeToFit()
+		label.textAlignment = .center
+		label.sizeToFit()
        
-        view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+		view.layer.cornerRadius = 8
         view.addSubview(label)
-        
+		label.center = view.center
         view.backgroundColor = .white
 
         let annotationNode = LocationAnnotationNode(location: location, view: view)
