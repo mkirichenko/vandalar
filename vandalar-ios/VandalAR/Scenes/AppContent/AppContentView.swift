@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 import SwiftUI
 
 struct AppContentView: View {
@@ -7,6 +8,7 @@ struct AppContentView: View {
 	@State private var shouldNavigateToMyNotes = false
 	@State private var shouldNavigateToAddNote = false
 	private let context: Context
+	private let fetchSubject = PassthroughSubject<Void, Never>()
 	
 	init(isRegistrationComplete: Bool, context: Context, privateId: UUID?) {
 		_isRegistrationComplete = State(initialValue: isRegistrationComplete)
@@ -18,8 +20,12 @@ struct AppContentView: View {
 			if isRegistrationComplete {
 				NavigationView {
 					VStack {
-						ARKitView().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                        ARKitView(viewModel: ARKitViewModel(context: context, fetchSubject: fetchSubject))
+                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
 							.edgesIgnoringSafeArea(.all)
+							.onAppear {
+								self.fetchSubject.send()
+							}
 						HStack {
 							NavigationLink(
 								destination: MyNotesView(viewModel: MyNotesViewModel(context: context)),

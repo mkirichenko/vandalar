@@ -4,20 +4,45 @@ import CoreLocation
 import ARKit
 
 struct ARKitView: UIViewRepresentable {
-    var sceneLocationView: SceneLocationView = SceneLocationView()
+    private let locationManager = CLLocationManager()
+	@ObservedObject private var viewModel: ARKitViewModel
+	
+	init(viewModel: ARKitViewModel) {
+		self.viewModel = viewModel
+	}
     
-    func makeUIView(context: Context) -> SceneLocationView {
+    public func makeUIView(context: Context) -> SceneLocationView {
+        let sceneLocationView: SceneLocationView = SceneLocationView()
         sceneLocationView.run()
         return sceneLocationView
     }
 
-    func updateUIView(_ uiView: SceneLocationView, context: Context) {
-        let note = Note(id: 0, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", lat: 54.838781, lon: 83.105312, height: 200, created: Date())
+    public func updateUIView(_ uiView: SceneLocationView, context: Context) {
+        uiView.removeAllNodes()
+        
+		if viewModel.notes.isEmpty {
+			guard let location = locationManager.location else { return }
+            let note = NoteWithAuthor(
+				id: 0,
+				content: "No notes added, sorry",
+				userId: "595da550-37b7-11ea-aec2-2e728ce88125",
+				userName: "Somebody",
+				lat: location.coordinate.latitude,
+				lon: location.coordinate.longitude,
+				height: 200,
+				created: Date()
+			)
+            
+            addNote(note: note, to: uiView)
+            return
+        }
        
-        addNoteToARScene(note: note)
+		for note in viewModel.notes {
+            addNote(note: note, to: uiView)
+        }
     }
     
-    private func addNoteToARScene(note: Note) {
+    private func addNote(note: NoteWithAuthor, to scene: SceneLocationView) {
         let coordinate = CLLocationCoordinate2D(latitude: note.lat, longitude: note.lon)
         let location = CLLocation(coordinate: coordinate, altitude: note.height)
         
@@ -40,6 +65,6 @@ struct ARKitView: UIViewRepresentable {
         let annotationNode = LocationAnnotationNode(location: location, view: view)
         annotationNode.scaleRelativeToDistance = false
         
-        sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+        scene.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
     }
 }

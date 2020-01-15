@@ -19,6 +19,7 @@
 		E228452F23C8D87A00077B38 /* UUID+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228452E23C8D87A00077B38 /* UUID+Ext.swift */; };
 		E228453223C8DC5E00077B38 /* AddNoteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453123C8DC5E00077B38 /* AddNoteRequest.swift */; };
 		E228453423C8DC9000077B38 /* AddNoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E228453323C8DC9000077B38 /* AddNoteResponse.swift */; };
+		E2681FF023CF9EB100FDB3BB /* ARKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2681FEF23CF9EB100FDB3BB /* ARKitViewModel.swift */; };
 		E268A1BE23CB5E9700FDB3BB /* MyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */; };
 		E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */; };
 		E268A1C223CB634E00FDB3BB /* MyNotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */; };
@@ -52,6 +53,7 @@
 		E228452E23C8D87A00077B38 /* UUID+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+Ext.swift"; sourceTree = "<group>"; };
 		E228453123C8DC5E00077B38 /* AddNoteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRequest.swift; sourceTree = "<group>"; };
 		E228453323C8DC9000077B38 /* AddNoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteResponse.swift; sourceTree = "<group>"; };
+		E2681FEF23CF9EB100FDB3BB /* ARKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitViewModel.swift; sourceTree = "<group>"; };
 		E268A1BD23CB5E9700FDB3BB /* MyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesView.swift; sourceTree = "<group>"; };
 		E268A1BF23CB610F00FDB3BB /* MyNotesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesItemView.swift; sourceTree = "<group>"; };
 		E268A1C123CB634E00FDB3BB /* MyNotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				E28BCBEF23C0DCEF00DDFFA8 /* AppContentView.swift */,
 				E06B4E0723CB698200288EEF /* ARKitView.swift */,
+				E2681FEF23CF9EB100FDB3BB /* ARKitViewModel.swift */,
 			);
 			path = AppContent;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				E28BCBD823BE43FC00DDFFA8 /* RegistrationRequest.swift in Sources */,
 				E268A1C023CB610F00FDB3BB /* MyNotesItemView.swift in Sources */,
 				E268FA6023CE4ED000FDB3BB /* AddNoteViewModel.swift in Sources */,
+				E2681FF023CF9EB100FDB3BB /* ARKitViewModel.swift in Sources */,
 				E28BCBE723BE5FAD00DDFFA8 /* RegistrationViewModel.swift in Sources */,
 				E268FA6223CE681A00FDB3BB /* NoteWithAuthor.swift in Sources */,
 				E28BCBEB23BE63DD00DDFFA8 /* VandalAPIServiceMock.swift in Sources */,
